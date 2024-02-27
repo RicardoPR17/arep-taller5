@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forms</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h1>Sine</h1>
+    <form action="/hello">
+      <label for="number">Number:</label><br />
+      <input type="text" id="number" name="number" placeholder="value in degrees" /><br /><br />
+      <input type="button" value="Submit" onclick="sinReq()" />
+    </form>
+    <div id="sinmsg"></div>
+
+    <script>
+      function sinReq() {
+        let nameVar = document.getElementById("number").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+          document.getElementById("sinmsg").innerHTML = this.responseText;
+        };
+        xhttp.open("GET", "/sin/" + nameVar);
+        xhttp.send();
+      }
+    </script>
+
+    <h1>Cos</h1>
+    <form action="/hello">
+      <label for="number">Number:</label><br />
+      <input type="text" id="number" name="number" placeholder="value in degrees" /><br /><br />
+      <input type="button" value="Submit" onclick="cosReq()" />
+    </form>
+    <div id="cosmsg"></div>
+
+    <script>
+      function cosReq() {
+        let nameVar = document.getElementById("number").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+          document.getElementById("cosmsg").innerHTML = this.responseText;
+        };
+        xhttp.open("GET", "/cos/" + nameVar);
+        xhttp.send();
+      }
+    </script>
+
+    <h1>Palindrome</h1>
+    <form action="/hello">
+      <label for="word">Word to check:</label><br />
+      <input type="text" id="word" name="word" placeholder="Type a string to check" /><br /><br />
+      <input type="button" value="Submit" onclick="palin()" />
+    </form>
+    <div id="palindrome"></div>
+
+    <script>
+      function palin() {
+        let nameVar = document.getElementById("word").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+          document.getElementById("palindrome").innerHTML = this.responseText;
+        };
+        xhttp.open("GET", "/palindrome/" + nameVar);
+        xhttp.send();
+      }
+    </script>
+
+    <h1>Module of a vector</h1>
+    <form action="/hello">
+      <label for="coords">Coordinates of the vector:</label><br />
+      <input type="text" id="coords" name="coords" placeholder="Type the coordinates separed by comma" /><br /><br />
+      <input type="button" value="Submit" onclick="module()" />
+    </form>
+    <div id="vector"></div>
+
+    <script>
+      function module() {
+        let nameVar = document.getElementById("coords").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+          document.getElementById("vector").innerHTML = this.responseText;
+        };
+        xhttp.open("GET", "/module/" + nameVar);
+        xhttp.send();
+      }
+    </script>
+  </body>
+</html>
