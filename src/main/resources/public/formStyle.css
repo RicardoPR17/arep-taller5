@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   margin: 0;
   padding: 0;
   display: flex;
@@ -25,7 +25,7 @@ input[type="text"] {
 }
 
 input[type="button"] {
-  background-color: #4caf50;
+  background-color: #3a833c;
   border: none;
   color: white;
   padding: 10px 20px;
