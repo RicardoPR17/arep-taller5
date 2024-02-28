@@ -32,7 +32,8 @@ Para ejecutarlo, podrá hacerlo desde la terminal de comandos como se explica a 
   En caso de realizar la ejecución desde la terminal de comandos, se debe realizar lo siguiente:
   1. Acceder al directorio del proyecto usando el comando `cd arep-taller5`.
   2. Una vez dentro del directorio del proyecto, se ejecuta el comando `mvn clean install` para generar la carpeta _target_.
-  3. Desde la terminal, ejecutamos el comando `java -cp "target/classes;target/dependency/*" co.edu.escuelaing.sparkdockerdemolive.SparkWebServer`. En caso de ejecutarse en Mac o Linux, cambiar el ; por :, es decir el comando sería `java -cp "target/classes:target/dependency/*" co.edu.escuelaing.sparkdockerdemolive.SparkWebServer`.
+  3. Desde la terminal, ejecutamos el comando `java -cp "target/classes;target/dependency/*" co.edu.escuelaing.sparkdockerdemolive.SparkWebServer`.
+     1. **Nota:** En caso de ejecutarse en Mac o Linux, cambiar el ; por :, es decir el comando sería `java -cp "target/classes:target/dependency/*" co.edu.escuelaing.sparkdockerdemolive.SparkWebServer`.
   4. Listo, el servidor web estará corriendo y verás un mensaje diciendo que el servidor ya inició.
 
 #### Docker Hub
