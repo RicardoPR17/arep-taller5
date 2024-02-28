@@ -23,6 +23,12 @@ public class SparkWebServer {
         get("module/:coords", (req, res) -> "The module of the given vector is " + vectorModule(req.params(":coords")));
     }
 
+    /**
+     * Give the port for the server
+     * 
+     * @return If the PORT enviroment variable is define, return his value.
+     *         Otherwise, 4567
+     */
     private static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
@@ -30,6 +36,12 @@ public class SparkWebServer {
         return 4567;
     }
 
+    /**
+     * Check if a string is a palidrome
+     * 
+     * @param word The string to check
+     * @return true if the string is palindrome, otherwise false
+     */
     private static boolean checkPalindrome(String word) {
         String reversed = "";
         for (int i = word.length() - 1; i >= 0; i--) {
@@ -39,10 +51,17 @@ public class SparkWebServer {
         return word.equals(reversed);
     }
 
-    private static String vectorModule(String coords) {
-        String[] coords_divided = coords.split(",");
-        double a = Double.parseDouble(coords_divided[0]);
-        double b = Double.parseDouble(coords_divided[1]);
+    /**
+     * Get the coordinates or components of a vector and calculate his module or
+     * norm
+     * 
+     * @param coordsJoin The coordinates of the vector separated by comma (ie. 4,6)
+     * @return A String representation of the vector's module
+     */
+    private static String vectorModule(String coordsJoin) {
+        String[] coords = coordsJoin.split(",");
+        double a = Double.parseDouble(coords[0]);
+        double b = Double.parseDouble(coords[1]);
         return String.valueOf(Math.sqrt(a * a + b * b));
     }
 
